@@ -24,6 +24,8 @@ sed -i '/spi-max-frequency/a\\t\tbroken-flash-reset;' target/linux/ramips/dts/mt
 sed -i 's/<0xa0000 0xf60000>/<0xa0000 0x1fb0000>/g' target/linux/ramips/dts/mt7621_phicomm_k2p.dts
 sed -i 's/15744k/32448k/g' target/linux/ramips/image/mt7621.mk
 sed -i 's/OpenWrt/K2P-32M/g' package/base-files/files/bin/config_generate
+sed -i 's/<80000000>/<10000000>/g' target/linux/ramips/dts/mt7621_phicomm_k2p.dts
+sed -i 's/m25p,fast-read;/broken-flash-reset;/g' target/linux/ramips/dts/mt7621_phicomm_k2p.dts
 
 ##### Modify the version number
 sed -i 's/OpenWrt /Qiang build from Lede $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g' package/lean/default-settings/files/zzz-default-settings
